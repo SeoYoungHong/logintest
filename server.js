@@ -8,6 +8,10 @@ const bodyParser = require("body-parser");
 const naver_auth = require('./naver_auth.js');
 
 const app = express();
+import configure from './src/aws-exports'
+import {AWS} from 'aws-sdk'
+AWS.configure(configure)
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
